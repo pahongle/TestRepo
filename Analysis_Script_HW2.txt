@@ -1,0 +1,30 @@
+#!/usr/bin/env Rscript
+
+#EU <- read.csv("/mnt/c/Users/Phong/Desktop/Rollins Fall 2020/INFO 550/EU.dummy.csv")
+EU <- read.csv("./EU.dummy.csv")
+
+print('Survey Type Table (Count)')
+table(EU$survey_type)
+
+print('Survey Type Table (Percentage)')
+round(prop.table(table(EU$survey_type)),2)
+
+print("Summary of TF %")
+summary(EU$TF)
+
+print("Summary of TI %")
+summary(EU$TI)
+
+print("Summary of TT %")
+summary(EU$TT)
+
+print('Total Population of Children')
+sum(EU$eu_examined_children)
+
+print('Total Population of All Ages')
+sum(EU$eu_examamined_ages_all)
+
+print('Percentage of Children from Total Population') 
+sum(EU$eu_examined_children)/sum(EU$eu_examamined_ages_all)
+
+print('All code has run!')
